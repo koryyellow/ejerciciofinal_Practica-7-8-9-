@@ -1,0 +1,154 @@
+# Proyecto: Sistema de Tienda en Línea Dockerizada
+
+## Integrantes
+
+Castillo Hernández Pedro Alexander 
+Hernández Rios Cristian Sebastián 
+Mora Rendon Gabriel 
+
+## Descripción del Dominio
+
+
+Este proyecto modela una **tienda en línea** que gestiona clientes, productos, categorías, pedidos, detalles de pedido, pagos, envíos y proveedores. El objetivo es integrar los conceptos de bases de datos relacionales, consultas avanzadas y despliegue mediante contenedores Docker.
+
+El sistema permite ejecutar **20 consultas complejas** desde un **menú interactivo en línea de comandos**, mostrando tanto la descripción de la consulta como sus resultados.
+
+---
+
+## Esquema de la Base de Datos
+
+### Tablas (8 relaciones)
+
+1. clientes
+2. productos
+3. categorias
+4. pedidos
+5. detalle_pedido
+6. pagos
+7. envios
+8. proveedores
+
+Cada tabla cuenta con:
+
+* Clave primaria
+* Claves foráneas bien definidas
+* Entre 4 y 8 atributos
+
+La base de datos contiene **más de 100 tuplas**, con datos realistas y coherentes.
+
+---
+
+## Consultas Implementadas (20)
+
+Las consultas se agrupan de la siguiente forma:
+
+### 1. Operadores Básicos (5)
+
+* Selección (σ)
+* Proyección (π)
+* Unión (∪)
+* Intersección (∩)
+* Diferencia (-)
+
+### 2. Reuniones / Joins (5)
+
+* Join natural (⨝)
+* Left Join (⟕)
+* Right Join (⟖)
+
+### 3. Agrupación y Agregación (5)
+
+* COUNT
+* SUM
+* AVG
+* GROUP BY
+* HAVING
+
+### 4. División (3)
+
+Consultas que responden preguntas del tipo: *"clientes que han comprado todos los productos de cierta categoría"*.
+
+### 5. Cuantificadores Universales (2)
+
+Consultas que verifican condiciones para **todos** los elementos de un conjunto.
+
+
+## Menú Interactivo 
+
+El proyecto incluye un **menú interactivo en Python** que permite:
+
+* Seleccionar cualquiera de las 20 consultas
+* Ver la descripción de la consulta
+* Ejecutar la consulta en la base de datos
+* Visualizar los resultados directamente en consola
+
+El menú se ejecuta desde el contenedor y evita que el usuario escriba SQL manualmente.
+
+
+## Dockerización del Proyecto
+
+El proyecto está completamente dockerizado para facilitar su ejecución.
+
+### Archivos Clave
+
+* `Dockerfile`: configura el contenedor de la aplicación Python
+* `docker-compose.yml`: levanta la base de datos MySQL y la aplicación
+* `menu.py`: menú interactivo de consultas
+
+
+
+## Instrucciones de Instalación y Ejecución
+
+### Requisitos Previos
+
+* Docker
+* Docker Compose
+
+### Pasos para Ejecutar el Proyecto
+
+1. Clonar el repositorio:
+
+```bash
+git clone https://github.com/koryyellow/ejerciciofinal_Practica-7-8-9-.git
+cd proyectofinal
+```
+
+2. Levantar los contenedores:
+
+```bash
+docker compose up -d --build
+```
+
+3. Entrar al contenedor de la aplicación:
+
+```bash
+docker compose exec app sh
+```
+
+4. Ejecutar el menú interactivo:
+
+```bash
+python menu.py
+```
+
+5. Seleccionar una opción del menú escribiendo el número correspondiente y presionar **Enter**.
+
+---
+
+## Notas Importantes
+
+* Los números del menú se ingresan **después** de que el menú aparece.
+* Si algo falla, se recomienda reconstruir los contenedores:
+
+```bash
+docker compose down
+docker compose up -d --build
+```
+
+---
+
+## Conclusión
+
+Este proyecto integra diseño de bases de datos, consultas avanzadas, programación en Python y despliegue con Docker. Proporciona una solución completa, reproducible y profesional para el manejo y consulta de información en una tienda en línea.
+
+
