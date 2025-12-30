@@ -109,8 +109,9 @@ El proyecto está completamente dockerizado para facilitar su ejecución.
 1. Clonar el repositorio:
 
 ```bash
-git clone https://github.com/koryyellow/ejerciciofinal_Practica-7-8-9-.git
-cd proyectofinal
+cd git clone https://github.com/koryyellow/ejerciciofinal_Practica-7-8-9-.git
+cd ejerciciofinal_Practica-7-8-9-
+
 ```
 
 2. Levantar los contenedores:
