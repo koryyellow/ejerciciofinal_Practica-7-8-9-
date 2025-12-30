@@ -2,9 +2,9 @@
 
 ## Integrantes
 
-Castillo Hernández Pedro Alexander 
-Hernández Rios Cristian Sebastián 
-Mora Rendon Gabriel 
+---Castillo Hernández Pedro Alexander 
+---Hernández Rios Cristian Sebastián 
+---Mora Rendon Gabriel 
 
 ## Descripción del Dominio
 
